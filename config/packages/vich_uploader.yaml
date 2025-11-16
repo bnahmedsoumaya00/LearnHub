@@ -1,0 +1,13 @@
+# config/packages/vich_uploader.yaml
+vich_uploader:
+    db_driver: orm
+    storage: file_system  # ← Use file_system (not flysystem!) for Symfony 4
+
+    mappings:
+        user_avatar:
+            uri_prefix: /uploads/avatars
+            upload_destination: '%kernel.project_dir%/public/uploads/avatars'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

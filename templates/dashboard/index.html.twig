@@ -1,0 +1,16 @@
+{# templates/dashboard/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}My Dashboard{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h1>Welcome, {{ app.user.fullName ?? app.user.email }} 🎉</h1>
+    <p>You're logged in! This is your student dashboard.</p>
+    <div class="mt-4">
+        <a href="{{ path('app_logout') }}" class="btn btn-outline-danger">
+            <i class="bi bi-box-arrow-right me-1"></i> Logout
+        </a>
+    </div>
+</div>
+{% endblock %}
